@@ -2,10 +2,10 @@ import React from 'react'
 
 type Props = {}
 
-const index = (props: Props) => {
+const Layout = (props: Props) => {
     return (
-        <div>index</div>
+        <div>Layout</div>
     )
 }
 
-export default index
+export default Layout

@@ -8,11 +8,11 @@ const routerConfig: RouterConfit = {
             path: '/',
             reducer: '/login'
         },
-        // {
-        //     path: '/',
-        //     name: 'layout',
-        //     component: lazy(() => import('@/pages/layout'))
-        // },
+        {
+            path: '/',
+            name: 'layout',
+            component: lazy(() => import('@/pages/layout'))
+        },
         {
             path: '/login',
             name: 'login',

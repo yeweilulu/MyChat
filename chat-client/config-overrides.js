@@ -11,10 +11,10 @@ const path = require('path')
 // const smp = new SpeedMeasurePlugin()
 const {
     override,
-    fixBabelImports,
+    // fixBabelImports,
     addWebpackAlias,
-    addWebpackPlugin,
-    overrideDevServer
+    // addWebpackPlugin,
+    // overrideDevServer
 } = require('customize-cra')
 // const isProduction = process.env.NODE_ENV === 'production'
 // let analyzer_type = process.env.ANALYZER_ENV
