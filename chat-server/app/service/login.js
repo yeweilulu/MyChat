@@ -29,7 +29,7 @@ class UserService extends Service {
             return {
                 code: 200,
                 message: '登陆成功',
-                data: res
+                data: res[0]
             }
         }
         return {

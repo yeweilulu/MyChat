@@ -4,8 +4,8 @@ import {
     ProConfigProvider,
     ProFormCheckbox,
 } from '@ant-design/pro-components';
+import './index.scss'
 import { Tabs, Button } from 'antd';
-import { useState } from 'react';
 import { Dispatch, bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as actions from '@/actions'
@@ -18,13 +18,14 @@ const items = [
     { tab: '注册', key: 'signin', label: '注册' }
 ]
 const Login = (props: LOGIN_UI_PROPS) => {
-    console.log(props)
     const {
         userLogin,
-        userSignin
+        userSignin,
+        setLoginType,
+        setLoading,
+        loginType,
+        loading
     } = props
-    const [loginType, setLoginType] = useState<LOGIN_TYPE>('login');
-    const [loading, setLoading] = useState<boolean>(false)
     const onSubmit = async (value: LOGIN_USER_INFO) => {
         setLoading(true)
         if (loginType === 'login') {
@@ -32,12 +33,10 @@ const Login = (props: LOGIN_UI_PROPS) => {
         } else {
             userSignin(value)
         }
-
-
     }
     return (
-        <ProConfigProvider hashed={true}>
-            <div style={{ backgroundColor: 'white' }}>
+        <ProConfigProvider hashed={true} >
+            <div style={{ backgroundColor: 'white' }} className='login'>
                 <LoginForm
                     logo="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
                     title="MyChat"

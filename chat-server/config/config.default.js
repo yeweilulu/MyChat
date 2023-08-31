@@ -16,7 +16,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1693357196364_8312';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['auth'];
 
   // add your user config here
   const userConfig = {
@@ -48,6 +48,11 @@ module.exports = appInfo => {
       csrf: {
         enable: false,
       },
+    },
+    jwt: {
+      secret: 'your secret key',
+      expiresIn: '1h',
+      whiteList: ['/login']
     },
   };
 
