@@ -12,7 +12,7 @@ import * as actions from '@/actions'
 import LogIn from './component/LogIn'
 import SignIn from './component/SignIn'
 import { LOGIN_UI_PROPS, LOGIN_USER_INFO, LOGIN_TYPE } from '@/types/login'
-
+import { ALL_REDUCER_STATE } from '@/types/reducer'
 const items = [
     { tab: '登录', key: 'login', label: '登录' },
     { tab: '注册', key: 'signin', label: '注册' }
@@ -20,13 +20,20 @@ const items = [
 const Login = (props: LOGIN_UI_PROPS) => {
     console.log(props)
     const {
-        userLogin
+        userLogin,
+        userSignin
     } = props
     const [loginType, setLoginType] = useState<LOGIN_TYPE>('login');
     const [loading, setLoading] = useState<boolean>(false)
     const onSubmit = async (value: LOGIN_USER_INFO) => {
         setLoading(true)
-        userLogin(value)
+        if (loginType === 'login') {
+            userLogin(value)
+        } else {
+            userSignin(value)
+        }
+
+
     }
     return (
         <ProConfigProvider hashed={true}>
@@ -77,7 +84,7 @@ const Login = (props: LOGIN_UI_PROPS) => {
         </ProConfigProvider>
     );
 };
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: ALL_REDUCER_STATE) => {
     return {
         ...state.login
     }

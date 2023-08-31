@@ -1,4 +1,5 @@
-import { LOGIN_REXUCER_ACTION, LOGIN_REXUCER_STATE } from '@/types/login'
+import { LOGIN_REXUCER_ACTION } from '@/types/login'
+import { LOGIN_REXUCER_STATE } from '@/types/reducer'
 
 const initialState = {
     list: []
