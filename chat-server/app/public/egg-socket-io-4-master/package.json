@@ -1,0 +1,85 @@
+{
+  "name": "egg-socket.io-4",
+  "version": "4.2.7",
+  "description": "egg plugin for socket.io",
+  "eggPlugin": {
+    "name": "io",
+    "dependencies": [
+      "session"
+    ]
+  },
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-plugin",
+    "socket.io",
+    "websocket"
+  ],
+  "dependencies": {
+    "accepts": "~1.3.4",
+    "base64id": "~2.0.0",
+    "debug": "~4.3.1",
+    "delegates": "^1.0.0",
+    "engine.io": "~5.0.0",
+    "is-type-of": "^1.2.1",
+    "koa-compose": "^4.1.0",
+    "socket.io-adapter": "~2.2.0",
+    "socket.io-parser": "~4.0.3",
+    "socket.io-redis": "^6.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.9.4",
+    "@types/socket.io": "^1.4.33",
+    "autod": "^3.0.1",
+    "egg": "^2.12.0",
+    "egg-bin": "^4.9.0",
+    "egg-ci": "^1.10.0",
+    "egg-mock": "^3.20.1",
+    "egg-redis": "^2.0.0",
+    "egg-session-redis": "^2.1.0",
+    "eslint": "^5.8.0",
+    "eslint-config-egg": "^7.1.0",
+    "pedding": "^1.1.0",
+    "rimraf": "^2.6.2",
+    "semver": "^5.4.1",
+    "socket.io-client": "^2.1.1",
+    "supertest": "^3.3.0",
+    "typescript": "^3.0.3",
+    "uws": "10.148.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "files": [
+    "app",
+    "lib",
+    "config",
+    "app.js",
+    "index.d.ts",
+    "socket.io"
+  ],
+  "ci": {
+    "version": "8, 10",
+    "license": true,
+    "services": "redis-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitee.com/TinCen/egg-socket-io-4.git"
+  },
+  "bugs": {
+    "url": "https://gitee.com/TinCen/egg-socket-io-4"
+  },
+  "homepage": "https://gitee.com/TinCen/egg-socket-io-4",
+  "author": "ngot <zhuanghengfei@gmail.com>",
+  "license": "MIT"
+}

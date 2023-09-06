@@ -16,7 +16,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1693357196364_8312';
 
   // add your middleware config here
-  config.middleware = ['auth'];
+  // config.middleware = ['auth'];
 
   // add your user config here
   const userConfig = {
@@ -54,6 +54,23 @@ module.exports = appInfo => {
       expiresIn: '1h',
       whiteList: ['/login']
     },
+    io: {
+      init: {},
+      namespace: {
+        '/': {
+          connectionMiddleware: ['connection'],
+          packetMiddleware: []
+        }
+      },
+    },
+    redis: {
+      client: {
+        port: 6379,
+        host: '127.0.0.1',
+        password: '',
+        db: 0,
+      },
+    }
   };
 
   return {

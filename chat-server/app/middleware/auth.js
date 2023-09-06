@@ -1,6 +1,8 @@
 
 module.exports = (options, app) => {
+
     return async function auth(ctx, next) {
+        
         if (!app.config.jwt.whiteList.includes(ctx.request.url)) {
             // let token = ctx.request.header?.authorization.substring(7)
             let token = ctx.request.header?.authorization

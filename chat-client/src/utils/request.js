@@ -21,7 +21,7 @@ instance.interceptors.request.use(function (config) {
 instance.interceptors.response.use(function (response) {
     // 对响应数据做点什么
     const res = response.data;
-
+ 
     if (res.code !== 200) {
         // switch (res.code) {
         //     case 401: message.error('未登录或登录超时')

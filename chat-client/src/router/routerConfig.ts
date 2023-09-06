@@ -1,17 +1,33 @@
 import { lazy } from 'react'
 import { RouterConfit } from './router'
-
 const routerConfig: RouterConfit = {
     model: 'history',
     routerList: [
         {
             path: '/',
-            reducer: '/login'
+            reducer: '/chat'
         },
         {
             path: '/',
             name: 'layout',
-            component: lazy(() => import('@/pages/layout'))
+            component: lazy(() => import('@/pages/layout')),
+            children: [
+                {
+                    path: '/chat',
+                    name: 'chat',
+                    component: lazy(() => import('@/pages/chat')),
+                },
+                {
+                    path: '/addressBook',
+                    name: 'addressBook',
+                    component: lazy(() => import('@/pages/addressBook')),
+                },
+                {
+                    path: '/collect',
+                    name: 'collect',
+                    component: lazy(() => import('@/pages/collect')),
+                },
+            ]
         },
         {
             path: '/login',

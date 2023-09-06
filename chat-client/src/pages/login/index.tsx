@@ -88,6 +88,7 @@ const mapStateToProps = (state: ALL_REDUCER_STATE) => {
         ...state.login
     }
 }
+
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(actions, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
